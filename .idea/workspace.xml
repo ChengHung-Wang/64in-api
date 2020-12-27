@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dddbe386-c47d-49a7-a7c8-1e3bb00e3ea8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UpdateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UpdateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
@@ -195,8 +198,16 @@
       <workItem from="1608456301699" duration="6000" />
       <workItem from="1608539283340" duration="9947000" />
       <workItem from="1608561967943" duration="500000" />
-      <workItem from="1608806733984" duration="15808000" />
+      <workItem from="1608806733984" duration="22894000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1609063328459</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609063328459</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +225,15 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="175" key="#phpunit.xml" timestamp="1609069104892">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="499" y="175" key="#phpunit.xml/0.0.1680.1050@0.0.1680.1050" timestamp="1609069104892" />
     <state x="349" y="164" key="SettingsEditor" timestamp="1608808254513">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -223,6 +242,14 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="446" y="142" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1609062169794" />
+    <state x="505" y="248" key="run.anything.popup" timestamp="1609069097176">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="248" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1609069097176" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1609069098337">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1609069098337" />
     <state x="570" y="444" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1608807281522">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -244,11 +271,6 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/../01_Module_C_20200902/app/Http/Controllers/UserController.php</url>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/UpdateController.php</url>
-          <line>93</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

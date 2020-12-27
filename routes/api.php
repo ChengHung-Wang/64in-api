@@ -33,8 +33,12 @@ Route::prefix("v1")->group(function() {
         Route::get("banner", [IndexController::class, "get_banner"]); // API XX 取得banner圖
     });
     Route::prefix("covid-19")->group(function() {
-        Route::get("update", [UpdateController::class, "all_country"]);
-        Route::get("write/{mmddYYYY}", [UpdateController::class, "write_daily"]);
+//        Route::get("update", [UpdateController::class, "all_country"]);
+        Route::get("write/{date}", [UpdateController::class, "write_daily"]);
         Route::get("write/{begin}/{after}", [UpdateController::class, "write_full"]);
+        // ex: covid-19/write/11-09-2020/12-26-2020 批量寫入SQL
+        Route::prefix("update")->group(function() {
+
+        });
     });
 });
