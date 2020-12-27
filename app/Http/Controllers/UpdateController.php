@@ -101,6 +101,79 @@ class UpdateController extends Controller
     }
 
 
+    public function countries() {
+        foreach(Countrys::all() as $main) {
+            if($main->source_json != null)
+                continue;
+            $special_countries = [
+                "Mainland China" => "china",
+                "South Korea" =>"Korea (Democratic People's Republic of)",
+                "North Macedonia" => "Macedonia (the former Yugoslav Republic of)",
+                "North Ireland" => "United Kingdom of Great Britain and Northern Ireland",
+                "Bosnia and Herzegovina" => "Bosnia and Herzegovina",
+                "Vatican City" => "Holy See",
+                "St. Martin" => "Saint Martin (French part)",
+                "Hong Kong SAR" => "Hong Kong",
+                "Taipei and environs" => "taiwan",
+                "occupied Palestinian territory" => "Palestine, State of",
+                "Macao SAR" => "Macao",
+                "Channel Islands" => "Jersey",
+                "Korea, South" => "Korea (Democratic People's Republic of)",
+                "Cruise Ship" => "",
+                "Czechia" => "Czech Republic",
+                "Taiwan*" => "Taiwan",
+                "Congo (Kinshasa)" => "Congo (Democratic Republic of the)",
+                "Congo (Brazzaville)" => "Congo",
+                "Republic of the Congo" => "Congo",
+                "Gambia, The" => "Gambia",
+                "Bahamas, The" => "Bahamas",
+                "Cape Verde" => "Cabo Verde",
+                "Diamond Princess" => "",
+                "West Bank and Gaza" => "Palestine, State of"
+            ];
+            $search_name = $main->name;
+            if(isset($special_countries[$main->name]))
+                $search_name = $special_countries[$main->name];
+            $data = $this->request_json("https://restcountries.eu/rest/v2/name/" . $search_name);
+            if(! is_array($data))
+                continue;
+            $data = $data[0];
+
+            $save_data = [
+                "name" => $data->name,
+                "nativeName" => $data->nativeName,
+                "iso2" => $data->alpha2Code,
+                "iso3" => $data->alpha3Code,
+                "lat_deg" => $data->latlng[0],
+                "long_deg" => $data->latlng[1],
+                "population" => $data->population,
+                "flag_url" => $this->flag_fetch($data->flag),
+                "source_json" => json_encode($data)
+            ];
+            if (empty(Islands::where("sub_name", $data->region)->first()))
+                $save_data['island_id'] = (int)Islands::insertGetId(["name" => $data->region, "sub_name" => $data->subregion]);
+            else
+                $save_data['island_id'] = (int)Islands::where("sub_name", $data->subregion)->first()->id;
+            $save_data['updated_at'] = Carbon::now();
+            $main->update($save_data);
+        }
+        return ok();
+    }
+
+    public function flag_fetch($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+        $file = curl_exec($ch);
+        curl_close($ch);
+        $file_path = "flag/" . md5($file) . "." . pathinfo($url, PATHINFO_EXTENSION);//儲存資料夾
+        $resource = fopen(public_path() . "/" . $file_path, 'a');//新增檔案
+        fwrite($resource, $file);//寫入媒體
+        fclose($resource);//關閉檔案
+        return $file_path;
+    }
+
 
     public function request_json($url, $method = "GET") {
         $curl = curl_init();
