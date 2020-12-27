@@ -150,7 +150,7 @@ class UpdateController extends Controller
                 "flag_url" => $this->flag_fetch($data->flag),
                 "source_json" => json_encode($data)
             ];
-            if (empty(Islands::where("sub_name", $data->region)->first()))
+            if (empty(Islands::where("sub_name", $data->subregion)->first()))
                 $save_data['island_id'] = (int)Islands::insertGetId(["name" => $data->region, "sub_name" => $data->subregion]);
             else
                 $save_data['island_id'] = (int)Islands::where("sub_name", $data->subregion)->first()->id;

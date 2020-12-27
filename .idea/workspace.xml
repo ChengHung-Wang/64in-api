@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dddbe386-c47d-49a7-a7c8-1e3bb00e3ea8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UpdateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UpdateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +195,7 @@
       <workItem from="1608456301699" duration="6000" />
       <workItem from="1608539283340" duration="9947000" />
       <workItem from="1608561967943" duration="500000" />
-      <workItem from="1608806733984" duration="27780000" />
+      <workItem from="1608806733984" duration="27925000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1609063328459</created>
@@ -213,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609078305794</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新地球上的國家資訊還有很多的flag">
+      <created>1609084282175</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609084282175</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +239,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="更新 covid-19 爬蟲" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新 covid-19 爬蟲" />
+    <MESSAGE value="更新地球上的國家資訊還有很多的flag" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新地球上的國家資訊還有很多的flag" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="175" key="#phpunit.xml" timestamp="1609069104892">
