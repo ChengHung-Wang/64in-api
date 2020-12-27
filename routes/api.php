@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UpdateController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,5 +31,10 @@ Route::prefix("v1")->group(function() {
     });
     Route::prefix("index")->group(function() {
         Route::get("banner", [IndexController::class, "get_banner"]); // API XX 取得banner圖
+    });
+    Route::prefix("covid-19")->group(function() {
+        Route::get("update", [UpdateController::class, "all_country"]);
+        Route::get("write/{mmddYYYY}", [UpdateController::class, "write_daily"]);
+        Route::get("write/{begin}/{after}", [UpdateController::class, "write_full"]);
     });
 });
