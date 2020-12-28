@@ -140,7 +140,6 @@ class UpdateController extends Controller
             $data = $data[0];
 
             $save_data = [
-                "name" => $data->name,
                 "nativeName" => $data->nativeName,
                 "iso2" => $data->alpha2Code,
                 "iso3" => $data->alpha3Code,
@@ -232,4 +231,6 @@ class UpdateController extends Controller
         }
         return $return_data;
     }
+
+
 }

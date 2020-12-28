@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\Covid19Controller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,12 +36,14 @@ Route::prefix("v1")->group(function() {
     Route::prefix("covid-19")->group(function() {
 //        Route::get("update", [UpdateController::class, "all_country"]);
         Route::prefix("write")->group(function() {
-            Route::get("{date}", [UpdateController::class, "write_daily"]);
-            Route::get("{begin}/{after}", [UpdateController::class, "write_full"]);
+            Route::post("{date}", [UpdateController::class, "write_daily"]);
+            Route::post("{begin}/{after}", [UpdateController::class, "write_full"]);
             // ex: covid-19/write/11-09-2020/12-26-2020 批量寫入SQL
         });
         Route::prefix("update")->group(function() {
-            Route::get("country", [UpdateController::class, "countries"]);
+            Route::post("country", [UpdateController::class, "countries"]);
         });
+        Route::get("islands", [Covid19Controller::class, "get_islands"]);
+        Route::get("countries/{island_id}", [Covid19Controller::class, "get_countries"]);
     });
 });
